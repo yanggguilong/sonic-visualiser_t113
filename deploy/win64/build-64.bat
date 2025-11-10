@@ -6,7 +6,8 @@ echo on
 set STARTPWD=%CD%
 
 rem The first paths are for workstation builds, the last for CI
-set QTDIR=C:\QtOpenSource\6.7.2\msvc2019_64
+rem set QTDIR=C:\QtOpenSource\6.7.2\msvc2019_64
+set QTDIR=C:\Qt\6.10.0\msvc2022_64
 if not exist %QTDIR% (
     set QTDIR=C:\Qt\6.6.1\msvc2019_64
 )
@@ -19,9 +20,9 @@ if not exist %QTDIR% (
 )
 
 rem Similarly, the first path is for workstation builds, the second for CI
-set vcvarsall="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+set vcvarsall="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
 if not exist %vcvarsall% (
-    set vcvarsall="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat"
+    set vcvarsall="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat"
 )
 if not exist %vcvarsall% (
 @   echo Could not find MSVC vars batch file in %vcvarsall%
